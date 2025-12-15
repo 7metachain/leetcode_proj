@@ -1,0 +1,3 @@
+Naive Approach: The first method involves using two loops. In the first loop, the entire array is placed in a hash table. In the second loop, each value is checked to see if there exists a complementary value in the hash table that adds up to the target.
+
+Optimized Approach: In a more refined, engineering-style solution, only one loop is used. As the array is iterated through, the required complementary value (that, when added to the current value, equals the target) is calculated and stored in the hash table. In subsequent iterations, the solution checks the hash table to see if the complementary value already exists. This method is more efficient and "elegant."
