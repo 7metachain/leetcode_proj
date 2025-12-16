@@ -1,0 +1,39 @@
+# LeetCode 438: Find All Anagrams in a String — Summary
+
+---
+
+## Core Insight
+
+**The key is not "knowing how to sort", but realizing that sorting repeats computation—while a sliding window can reuse information.**
+
+---
+
+## Problem Transformation
+
+- **Naive approach**: Sort each window substring and compare → O(n · m log m) → **TLE**
+- **Optimized approach**: Use a **frequency array** (size 26) as a "canonical representation" instead of sorting → **O(n)**
+
+---
+
+## Why Frequency Beats Sorting
+
+| Approach | Representation | Per-window cost | Total complexity |
+|----------|----------------|-----------------|------------------|
+| Sorting | Sorted string key | O(m log m) | O(n · m log m) |
+| Frequency | Multiset (26-array) | O(1) incremental | O(n) |
+
+---
+
+## Sliding Window Intuition
+
+> A sliding window is not about "how pointers move", but about **how the window maintains a fixed constraint while shifting**.
+
+- Initialize the first window separately
+- Each step: add one character, remove one character, compare frequency arrays
+
+---
+
+## One-Liner Takeaway
+
+> **Replace repeated sorting with incremental frequency updates—this is the essence of sliding window optimization.**
+
